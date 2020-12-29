@@ -61,11 +61,11 @@ def get_plot_params(plot_params, show_score_diffs, diff):
     defaults["symbols"] = {
         "all_pos_neg": defaults["system_names"][0],
         "all_pos_pos": defaults["system_names"][1],
-        "neg_s": u"\u25BD",
+        "neg_s": u"\u25BC", #25BD
         "neg_s_neg_p": u"-\u2193",
         "neg_s_pos_p": u"-\u2191",
         "neg_total": "",
-        "pos_s": u"\u25B3",
+        "pos_s": u"\u25B2", #25B3
         "pos_s_neg_p": u"+\u2193",
         "pos_s_pos_p": u"+\u2191",
         "pos_total": "",
