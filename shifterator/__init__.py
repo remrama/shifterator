@@ -1,5 +1,5 @@
 from .shifterator import Shift
-from . import generate_lexicon_ddr
+from .generate_lexicon import DDR
 from .shifts import (
     EntropyShift,
     JSDivergenceShift,
