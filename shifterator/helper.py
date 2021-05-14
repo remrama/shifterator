@@ -167,6 +167,10 @@ def get_score_dictionary(scores):
             lexicon_ref = 0
         elif "NRC" in lexicon:
             lexicon_ref = 0.5
+        elif "DDR" in lexicon:
+            lexicon_ref = 0
+        else:
+            raise ValueError(f"No lexicon reference exists for {lexicon}")
     except FileNotFoundError:
         raise FileNotFoundError(
             "Lexicon does not exist in Shifterator: {}".format(scores)
