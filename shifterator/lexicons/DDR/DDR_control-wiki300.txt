@@ -1,0 +1,11 @@
+control
+restraint
+command
+mastery
+hold
+contain
+check
+curb
+moderate
+operate
+manipulate
