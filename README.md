@@ -1,5 +1,14 @@
 # Shifterator
 
+> **⚠️ Important: Install from GitHub, not PyPI**
+>
+> The version of Shifterator on PyPI (`0.3.0`) is outdated and no longer maintained.
+> The actively maintained version lives here on GitHub. To install the latest version:
+>
+> ```bash
+> pip install git+https://github.com/ryanjgallagher/shifterator.git
+> ```
+
 The Shifterator package provides functionality for constructing **word shift graphs**, vertical bart charts that quantify *which* words contribute to a pairwise difference between two texts and *how* they contribute. By allowing you to look at changes in how words are used, word shifts help you to conduct analyses of sentiment, entropy, and divergence that are fundamentally more interpretable.
 
 <p align="center">
@@ -9,13 +18,19 @@ The Shifterator package provides functionality for constructing **word shift gra
 
 ## Install
 
-Python code to produce shift graphs can be downloaded via pip.
+Python code to produce shift graphs can be installed directly from GitHub:
 
-`pip install shifterator`
+```bash
+pip install git+https://github.com/ryanjgallagher/shifterator.git
+```
 
 ## Documentation
 
-[The documentation](https://shifterator.readthedocs.io/en/latest/) details how to create various kinds of word shift graphs with Shifterator, and includes a detailed cookbook for how to interpret, visualize, and work with word shifts.
+Documentation is available in the [docs/](docs/) folder of this repository. The Sphinx source can be built locally with `make html` from that directory.
+
+The old ReadTheDocs site (shifterator.readthedocs.io) is no longer maintained and may not reflect the current version.
+
+## Citation
 
 See the following paper for more details on word shifts, and please cite it if you use them in your work:
 

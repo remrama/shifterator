@@ -8,14 +8,14 @@ with open("requirements.txt") as f:
 
 setuptools.setup(
     name="shifterator",
-    version="0.2.0",
+    version="0.4.0",
     author="Ryan J. Gallagher",
     author_email="gallagher.r@northeastern.edu",
     description="Interpretable data visualizations for understanding how texts differ at the word level",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/ryanjgallagher/shifterator",
-    python_requires="~=3.6",
+    python_requires=">=3.8",
     install_requires=requirements,
     packages=setuptools.find_packages(),
     include_package_data=True,
