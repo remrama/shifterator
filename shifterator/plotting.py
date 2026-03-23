@@ -41,6 +41,7 @@ def get_plot_params(plot_params, show_score_diffs, diff):
             "pos_total": "#FECC5D",
             "total": "#707070",
         },
+        "font_family": None,
         "serif": False,
         "show_score_diffs": show_score_diffs,
         "show_total": True,
@@ -76,9 +77,24 @@ def get_plot_params(plot_params, show_score_diffs, diff):
     return defaults
 
 
-def set_serif():
-    rcParams["font.family"] = "serif"
+def set_serif(font_family=None):
+    if font_family is not None:
+        rcParams["font.family"] = font_family
+    else:
+        rcParams["font.family"] = "serif"
     rcParams["mathtext.fontset"] = "dejavuserif"
+
+
+def set_font(font_family):
+    """Set the font family for the plot, useful for CJK/Unicode support.
+
+    Parameters
+    ----------
+    font_family: str or list of str
+        The font family name(s) to use, e.g. 'Noto Sans CJK SC' for Chinese,
+        'Noto Sans' for broad Unicode coverage, or a list for fallback order
+    """
+    rcParams["font.family"] = font_family
 
 
 def get_bar_dims(type_scores, norm, plot_params):

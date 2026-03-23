@@ -134,14 +134,18 @@ class Shift:
         ----------
         type2freq: dict
             Keys are types and values are frequencies
-        type2score: dict
-            Keys are types and values are scores
+        type2score: dict or str
+            If dict, keys are types and values are scores. If str, the name of
+            a score lexicon included in Shifterator (e.g. 'labMT_English')
 
         Returns
         -------
         s_avg: float
             Average weighted score of system
         """
+        # If type2score is a lexicon name, load it
+        if isinstance(type2score, str):
+            type2score, _ = helper.get_score_dictionary(type2score)
         # Check we have a vocabulary to work with
         types = set(type2freq.keys()).intersection(set(type2score.keys()))
         if len(types) == 0:
@@ -400,7 +404,9 @@ class Shift:
         bar_labels = [kwargs["symbols"][b] for b in bar_order]
         labels = type_labels + bar_labels
         # Set font type
-        if kwargs["serif"]:
+        if kwargs["font_family"] is not None:
+            plotting.set_font(kwargs["font_family"])
+        elif kwargs["serif"]:
             plotting.set_serif()
         # Set labels
         if kwargs["detailed"]:

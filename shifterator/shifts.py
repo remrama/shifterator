@@ -16,6 +16,10 @@ class WeightedAvgShift(Shift):
         type. If str, the name of a score lexicon included in Shifterator.
         If None and other type2score is None, defaults to uniform scores
         across types. Otherwise defaults to the other type2score dict
+    type2score: dict or str, optional
+        Convenience parameter to set the same score dictionary for both
+        corpora. Equivalent to setting type2score_1=type2score. If
+        type2score_1 is also provided, type2score_1 takes precedence
     reference_value: str or float, optional
         The reference score to use to partition scores into two different
         regimes. If 'average', uses the average score according to type2freq_1
@@ -50,12 +54,16 @@ class WeightedAvgShift(Shift):
         type2freq_2,
         type2score_1=None,
         type2score_2=None,
+        type2score=None,
         reference_value=None,
         handle_missing_scores="error",
         stop_lens=None,
         stop_words=set(),
         normalization="variation",
     ):
+        # Allow type2score as a convenience alias for type2score_1
+        if type2score is not None and type2score_1 is None:
+            type2score_1 = type2score
         super().__init__(
             type2freq_1=type2freq_1,
             type2freq_2=type2freq_2,
