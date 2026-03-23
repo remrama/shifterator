@@ -1,3 +1,6 @@
+import matplotlib
+matplotlib.use("Agg")
+
 import random
 from itertools import product
 
@@ -20,53 +23,39 @@ system_2_b = {
 
 def test_jsd_shift_1():
     shift = JSDivergenceShift(system_1_a, system_2_a)
-    shift.get_shift_graph(system_names=["1A", "2A"])
+    shift.get_shift_graph(system_names=["1A", "2A"], show_plot=False)
 
 
 def test_entropy_shift_1():
     shift = EntropyShift(system_1_a, system_2_a)
-    shift.get_shift_graph(system_names=["1A", "2A"])
+    shift.get_shift_graph(system_names=["1A", "2A"], show_plot=False)
 
 
 def test_tsallis_shift_plus_1():
     shift = EntropyShift(system_1_a, system_2_a, alpha=2)
-    shift.get_shift_graph(system_names=["1A", "2A"])
+    shift.get_shift_graph(system_names=["1A", "2A"], show_plot=False)
 
 
 def test_tsallis_shift_minus_1():
     shift = EntropyShift(system_1_a, system_2_a, alpha=0.5)
-    shift.get_shift_graph(system_names=["1A", "2A"])
+    shift.get_shift_graph(system_names=["1A", "2A"], show_plot=False)
 
 
 def test_jsd_shift_2():
     shift = JSDivergenceShift(system_1_b, system_2_b)
-    shift.get_shift_graph(system_names=["1B", "2B"])
+    shift.get_shift_graph(system_names=["1B", "2B"], show_plot=False)
 
 
 def test_entropy_shift_2():
     shift = EntropyShift(system_1_b, system_2_b)
-    shift.get_shift_graph(system_names=["1B", "2B"])
+    shift.get_shift_graph(system_names=["1B", "2B"], show_plot=False)
 
 
 def test_tsallis_shift_plus_2():
     shift = EntropyShift(system_1_b, system_2_b, alpha=2)
-    shift.get_shift_graph(system_names=["1B", "2B"])
+    shift.get_shift_graph(system_names=["1B", "2B"], show_plot=False)
 
 
 def test_tsallis_shift_minus_2():
     shift = EntropyShift(system_1_b, system_2_b, alpha=0.5)
-    shift.get_shift_graph(system_names=["1B", "2B"])
-
-
-if __name__ == "__main__":
-    test_jsd_shift_1()
-    test_jsd_shift_2()
-
-    test_tsallis_shift_plus_1()
-    test_tsallis_shift_plus_2()
-
-    test_tsallis_shift_minus_1()
-    test_tsallis_shift_minus_2()
-
-    test_entropy_shift_1()
-    test_entropy_shift_2()
+    shift.get_shift_graph(system_names=["1B", "2B"], show_plot=False)
